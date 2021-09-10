@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Vue Clock</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body style="background-image: url(ratcha.png); background-repeat: no-repeat; background-size: cover;" >
+<!-- partial:index.partial.html -->
+<div class="app">
+  <div id="app1">
+    <div class="cards-container" v-for="(computedClock, index) of computedRealClock" :key="index">
+      <div class="container">
+        <div class="card bg-up">
+          <div class="inner">
+            <div class="content">
+              {{ computedClock.nextFormat.slice(-2, -1) }}
+            </div>
+          </div>
+        </div>
+        <div class="card bg-down">
+          <div class="inner">
+            <div class="content">{{ computedClock.currentFormat.slice(-2, -1) }}</div>
+          </div>
+        </div>
+        <div class="flip card" :style="computedClock.ifTens ? `transform: rotateX(-${computedClock.degree}deg);` : ''">
+          <div class="front inner">
+            <div class="content">
+              {{ computedClock.currentFormat.slice(-2, -1) }}
+            </div>
+          </div>
+          <div class="back inner">
+            <div class="content">
+              {{ computedClock.nextFormat.slice(-2, -1) }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="card bg-up">
+          <div class="inner">
+            <div class="content">
+              {{ computedClock.nextFormat.slice(-1) }}
+            </div>
+          </div>
+        </div>
+        <div class="card bg-down">
+          <div class="inner">
+            <div class="content">{{ computedClock.currentFormat.slice(-1) }}</div>
+          </div>
+        </div>
+        <div class="flip card" :style="`transform: rotateX(-${computedClock.degree}deg);`">
+          <div class="front inner">
+            <div class="content">
+              {{ computedClock.currentFormat.slice(-1) }}
+            </div>
+          </div>
+          <div class="back inner">
+            <div class="content">
+              {{ computedClock.nextFormat.slice(-1) }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="app2">
+    <div class="cards-container" v-for="(computedClock, index) of computedRealClock" :key="index">
+      <div class="container">
+        <div class="card bg-up">
+          <div class="inner">
+            <div class="content">
+              {{ computedClock.nextFormat.slice(-2, -1) }}
+            </div>
+          </div>
+        </div>
+        <div class="card bg-down">
+          <div class="inner">
+            <div class="content">{{ computedClock.currentFormat.slice(-2, -1) }}</div>
+          </div>
+        </div>
+        <div class="flip card" :style="computedClock.ifTens ? `transform: rotateX(-${computedClock.degree}deg);` : ''">
+          <div class="front inner">
+            <div class="content">
+              {{ computedClock.currentFormat.slice(-2, -1) }}
+            </div>
+          </div>
+          <div class="back inner">
+            <div class="content">
+              {{ computedClock.nextFormat.slice(-2, -1) }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="card bg-up">
+          <div class="inner">
+            <div class="content">
+              {{ computedClock.nextFormat.slice(-1) }}
+            </div>
+          </div>
+        </div>
+        <div class="card bg-down">
+          <div class="inner">
+            <div class="content">{{ computedClock.currentFormat.slice(-1) }}</div>
+          </div>
+        </div>
+        <div class="flip card" :style="`transform: rotateX(-${computedClock.degree}deg);`">
+          <div class="front inner">
+            <div class="content">
+              {{ computedClock.currentFormat.slice(-1) }}
+            </div>
+          </div>
+          <div class="back inner">
+            <div class="content">
+              {{ computedClock.nextFormat.slice(-1) }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
